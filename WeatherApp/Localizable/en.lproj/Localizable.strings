@@ -1,0 +1,13 @@
+"feels_like" = "Feels like";
+"sunset" = "Sunset";
+"sunrise" = "Sunrise";
+"pressure" = "Atm. pressure";
+"humidity" = "Humidity";
+"visibility" = "Visibility";
+"wind_speed" = "Wind speed";
+"today" = "Today";
+"max_temp" = "maximum temperature";
+"min_temp" = "minimum temperature";
+"precipitation_prob" = "probability of precipitation";
+"alert_restricted" = "Check your device settings and turn on location services";
+"alert_denied" = "You have disallow the application from using location services. You can change this in the settings of your device";

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DailyCollectionViewCell" customModule="Task_Lesson24" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="164" height="119"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="164" height="119"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gr0-dt-DvB" userLabel="date time label">
+                        <rect key="frame" x="0.0" y="0.0" width="164" height="24"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" verticalHuggingPriority="251" image="cloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="KM3-Ep-Adi">
+                        <rect key="frame" x="0.0" y="29" width="122" height="81.5"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="MJR-NW-fRu" userLabel="temp day value label">
+                        <rect key="frame" x="122" y="33.5" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="N4D-i2-h34" userLabel="temp night value label">
+                        <rect key="frame" x="122" y="62" width="42" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="KM3-Ep-Adi" secondAttribute="bottom" constant="6" id="0So-gq-9cp"/>
+                <constraint firstAttribute="trailing" secondItem="Gr0-dt-DvB" secondAttribute="trailing" id="7Mj-4S-JVs"/>
+                <constraint firstItem="Gr0-dt-DvB" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8NH-gk-bdR"/>
+                <constraint firstItem="MJR-NW-fRu" firstAttribute="top" secondItem="Gr0-dt-DvB" secondAttribute="bottom" constant="9.5" id="CPo-bY-dhO"/>
+                <constraint firstItem="KM3-Ep-Adi" firstAttribute="top" secondItem="Gr0-dt-DvB" secondAttribute="bottom" constant="2.5" id="FCX-cj-X0a"/>
+                <constraint firstAttribute="trailing" secondItem="MJR-NW-fRu" secondAttribute="trailing" id="Ihn-Se-ySC"/>
+                <constraint firstAttribute="trailing" secondItem="N4D-i2-h34" secondAttribute="trailing" id="LQV-Hm-sLp"/>
+                <constraint firstItem="MJR-NW-fRu" firstAttribute="leading" secondItem="KM3-Ep-Adi" secondAttribute="trailing" id="LkG-RU-eGa"/>
+                <constraint firstItem="Gr0-dt-DvB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="PVI-in-deH"/>
+                <constraint firstItem="N4D-i2-h34" firstAttribute="top" secondItem="MJR-NW-fRu" secondAttribute="bottom" constant="8" id="RWl-mh-xKB"/>
+                <constraint firstAttribute="bottom" secondItem="N4D-i2-h34" secondAttribute="bottom" constant="36.5" id="Tcl-3i-STI"/>
+                <constraint firstItem="N4D-i2-h34" firstAttribute="leading" secondItem="KM3-Ep-Adi" secondAttribute="trailing" id="UrW-fm-iqH"/>
+                <constraint firstItem="KM3-Ep-Adi" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="mgM-pt-Bij"/>
+                <constraint firstItem="N4D-i2-h34" firstAttribute="top" secondItem="MJR-NW-fRu" secondAttribute="bottom" constant="8" id="zTg-TR-wby"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="164" height="119"/>
+            <connections>
+                <outlet property="dayValueLabel" destination="Gr0-dt-DvB" id="LTJ-Be-oPA"/>
+                <outlet property="temperatureDayValueLabel" destination="MJR-NW-fRu" id="y13-Es-YMp"/>
+                <outlet property="temperatureNightValueLabel" destination="N4D-i2-h34" id="he2-uk-s8g"/>
+                <outlet property="weatherImageView" destination="KM3-Ep-Adi" id="eo6-91-5FO"/>
+            </connections>
+            <point key="canvasLocation" x="220.28985507246378" y="112.83482142857142"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="cloud" catalog="system" width="128" height="87"/>
+    </resources>
+</document>
