@@ -11,7 +11,23 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let winScene = (scene as? UIWindowScene) else { return }
+        window = UIWindow(windowScene: winScene)
+        let storageManager = StorageManager.shared
+
+        if storageManager.containsCoordinates {
+            if let coordinates = storageManager.storedCoordinates {
+                let geoDataFinder = GeoDataFinder()
+                geoDataFinder.delegate = self
+                geoDataFinder.findBySpecified(coordinates: coordinates)
+            }
+        } else {
+            let storyboard = UIStoryboard(name: "Finder", bundle: Bundle.main)
+            let vc = storyboard.instantiateInitialViewController() as! FinderViewController
+            UIApplication.shared.windows.first?.rootViewController = vc
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -43,5 +59,18 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
 
 
+}
+
+@available(iOS 13.0, *)
+extension SceneDelegate: GeoDataFinderDelegate {
+    func didGeoDataFinded(with geoData: GeoData?) {
+        let storyboard = UIStoryboard(name: "Weather", bundle: Bundle.main)
+        DispatchQueue.main.async {
+            let vc = storyboard.instantiateInitialViewController() as! WeatherViewController
+            vc.geoData = geoData
+            UIApplication.shared.windows.first?.rootViewController = vc
+            UIApplication.shared.windows.first?.makeKeyAndVisible()
+        }
+    }
 }
 
