@@ -24,7 +24,7 @@ class HourlyWeatherTableViewCell: UITableViewCell {
     }
 }
 
-//MARK: Delegate methods
+//MARK: UICollectionViewDelegate
 extension HourlyWeatherTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return hoursPerDay
@@ -37,6 +37,7 @@ extension HourlyWeatherTableViewCell: UICollectionViewDelegate, UICollectionView
     }
 }
 
+//MARK: Fillable
 extension HourlyWeatherTableViewCell: Fillable {
     func fillSelf(with geoData: GeoData?) {
         if let geoData = geoData {

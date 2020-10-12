@@ -15,17 +15,6 @@ class LocalGeoDataManager {
     }
     
 //MARK: Methods
-    func callLocalGeoData(by location: CLLocation, completion: @escaping (GeoData?) -> Void) {
-        geocoder?.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
-            let _location = placemarks?.first?.location ?? location
-            self.callWeatherContent(by: _location) { (weatherData) in
-                let placemark = placemarks?.first
-                let geoData = self.createGeoData(from: weatherData, and: placemark)
-                completion(geoData)
-            }
-        })
-    }
-    
     private func callWeatherContent(by location: CLLocation, completion: @escaping (WeatherData?) -> Void) {
         manager?.callWeatherByLocation(location, completion: { (weatherData) in
             completion(weatherData)
@@ -43,5 +32,17 @@ class LocalGeoDataManager {
         let geoData = GeoData(weather: weather, place: place)
         return geoData
     }
+    
+    func callLocalGeoData(by location: CLLocation, completion: @escaping (GeoData?) -> Void) {
+        geocoder?.reverseGeocodeLocation(location, completionHandler: { (placemarks, error) in
+            let _location = placemarks?.first?.location ?? location
+            self.callWeatherContent(by: _location) { (weatherData) in
+                let placemark = placemarks?.first
+                let geoData = self.createGeoData(from: weatherData, and: placemark)
+                completion(geoData)
+            }
+        })
+    }
+    
 }
 

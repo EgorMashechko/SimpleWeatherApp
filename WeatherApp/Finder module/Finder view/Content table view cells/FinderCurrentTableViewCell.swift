@@ -27,4 +27,5 @@ class FinderCurrentTableViewCell: UITableViewCell {
         cityLabel.text = cityName
         tempLabel.text = converter?.convertedTemperatureString(from: currentTemp)
     }
+    
 }

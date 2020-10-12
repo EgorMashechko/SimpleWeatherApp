@@ -20,14 +20,6 @@ class DailyCollectionViewCell: UICollectionViewCell {
     }
     
 //MARK: Methods
-    func fillSelf(with dailyWeatherData: DailyWeatherData?) {
-        if let weatherData = dailyWeatherData {
-            setDayValueWith(weatherData: weatherData)
-            setTemperatureValuesWith(weatherData: weatherData)
-            setWeatherIconWith(weatherData: weatherData)
-        }
-    }
-    
     private func setDayValueWith(weatherData: DailyWeatherData) {
         let weatherDate = Date(timeIntervalSince1970: TimeInterval(weatherData.dataTime))
         let dateFormatter = DateFormatter()
@@ -50,4 +42,13 @@ class DailyCollectionViewCell: UICollectionViewCell {
             })
         }
     }
+    
+    func fillSelf(with dailyWeatherData: DailyWeatherData?) {
+        if let weatherData = dailyWeatherData {
+            setDayValueWith(weatherData: weatherData)
+            setTemperatureValuesWith(weatherData: weatherData)
+            setWeatherIconWith(weatherData: weatherData)
+        }
+    }
+    
 }

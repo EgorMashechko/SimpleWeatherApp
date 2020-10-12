@@ -22,7 +22,7 @@ class DailyWeatherTableViewCell: UITableViewCell {
     }
 }
 
-//MARK: Delegate methods
+//MARK: UICollectionViewDelegate
 extension DailyWeatherTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dailyWeatherData?.count ?? 0
@@ -35,6 +35,7 @@ extension DailyWeatherTableViewCell: UICollectionViewDelegate, UICollectionViewD
     }
 }
 
+//MARK: Fillable
 extension DailyWeatherTableViewCell: Fillable {
     func fillSelf(with geoData: GeoData?) {
         dailyWeatherData = geoData?.weather?.daily

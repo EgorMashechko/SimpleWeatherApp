@@ -1,5 +1,6 @@
 import UIKit
 import GooglePlaces
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -8,10 +9,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        FirebaseApp.configure()
+        
         GMSPlacesClient.provideAPIKey("AIzaSyA7a9OOtHJ9Ol_yodYPZzs8OO9WYS9vD9Y")
         
         if #available(iOS 13.0, *) {
-            
+            // Do nothing, there are code in SceneDelegate for this case
         } else {
             window = UIWindow(frame: UIScreen.main.bounds)
             let storageManager = StorageManager.shared
