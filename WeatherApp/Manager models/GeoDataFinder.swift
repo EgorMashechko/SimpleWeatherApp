@@ -43,6 +43,22 @@ class GeoDataFinder: NSObject {
     }
     
 //MARK: Methods
+    private func createGMSAutocompleteVC() -> GMSAutocompleteViewController {
+        let controller = GMSAutocompleteViewController()
+        let filter = GMSAutocompleteFilter()
+        filter.type = .city
+        controller.autocompleteFilter = filter
+        controller.modalPresentationStyle = .currentContext
+        return controller
+    }
+    
+    private func createAlert(withMessage message: String?) -> UIAlertController? {
+        let action = UIAlertAction(title: "Понятно", style: .default, handler: nil)
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alert.addAction(action)
+        return alert
+    }
+    
     func findByCity() {
         let destinationCompleterVC = completerVC
         targetVC?.present(destinationCompleterVC!, animated: true, completion: nil)
@@ -63,24 +79,10 @@ class GeoDataFinder: NSObject {
         }
     }
     
-    private func createGMSAutocompleteVC() -> GMSAutocompleteViewController {
-        let controller = GMSAutocompleteViewController()
-        let filter = GMSAutocompleteFilter()
-        filter.type = .city
-        controller.autocompleteFilter = filter
-        controller.modalPresentationStyle = .currentContext
-        return controller
-    }
-    
-    private func createAlert(withMessage message: String?) -> UIAlertController? {
-        let action = UIAlertAction(title: "Понятно", style: .default, handler: nil)
-        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
-        alert.addAction(action)
-        return alert
-    }
+
 }
 
-//MARK: Delegate methods
+//MARK: CLLocationManagerDelegate
 extension GeoDataFinder: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let coordinates = locations.last?.coordinate {
@@ -92,7 +94,7 @@ extension GeoDataFinder: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        /* обработать ошибки */
+        /* handle errors */
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
@@ -116,6 +118,7 @@ extension GeoDataFinder: CLLocationManagerDelegate {
     }
 }
 
+//MARK: GMSAutocompleteViewControllerDelegate
 extension GeoDataFinder: GMSAutocompleteViewControllerDelegate {
     func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
         viewController.dismiss(animated: true, completion: nil)
@@ -127,7 +130,7 @@ extension GeoDataFinder: GMSAutocompleteViewControllerDelegate {
     }
     
     func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
-        /* обработать ошибку автокомплита*/
+        /* handle errors */
     }
     
     func wasCancelled(_ viewController: GMSAutocompleteViewController) {

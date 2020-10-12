@@ -19,14 +19,6 @@ class HourlyCollectionViewCell: UICollectionViewCell {
     }
     
 //MARK: Methods
-    func fillSelf(with hourlyWeatherData: HourlyWeatherData?, accordingTo zone: TimeZone?) {
-        if let weatherData = hourlyWeatherData, let timezone = zone {
-            setTimeValueWith(weatherData: weatherData, accordingTo: timezone)
-            setTemperatureWith(weatherData: weatherData)
-            setWeatherImageWith(weatherData: weatherData)
-        }
-    }
-    
     private func setTimeValueWith(weatherData: HourlyWeatherData, accordingTo zone: TimeZone) {
         let weatherDate = Date(timeIntervalSince1970: TimeInterval(weatherData.dataTime))
         let dateFormatter = DateFormatter()
@@ -51,4 +43,13 @@ class HourlyCollectionViewCell: UICollectionViewCell {
             })
         }
     }
+    
+    func fillSelf(with hourlyWeatherData: HourlyWeatherData?, accordingTo zone: TimeZone?) {
+        if let weatherData = hourlyWeatherData, let timezone = zone {
+            setTimeValueWith(weatherData: weatherData, accordingTo: timezone)
+            setTemperatureWith(weatherData: weatherData)
+            setWeatherImageWith(weatherData: weatherData)
+        }
+    }
+    
 }

@@ -1,6 +1,7 @@
 
 
 import UIKit
+import Firebase
 
 //MARK: Delegate protocol
 protocol FinderSearchCellDelegate: AnyObject {
@@ -29,5 +30,6 @@ class FinderSearchTableViewCell: UITableViewCell {
     @IBAction func onLocationButton(_ sender: UIButton) {
         delegate?.searchCell(self, didLocationButtonTap: sender)
     }
+    
 }
 

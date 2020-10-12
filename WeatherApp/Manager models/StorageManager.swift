@@ -34,12 +34,6 @@ class StorageManager {
     }
     
 //MARK: Methods
-    func saveCoordinates(from geoData: GeoData?) {
-        if let coordinates = geoData?.place?.coordinates {
-            saveData(coordinates)
-        }
-    }
-    
     private func saveData<T: Codable>(_ data: T) {
         let encoder = JSONEncoder()
         if let storeData = try? encoder.encode(data) {
@@ -47,4 +41,11 @@ class StorageManager {
             fileManager.createFile(atPath: storePath, contents: storeData, attributes: nil)
         }
     }
+    
+    func saveCoordinates(from geoData: GeoData?) {
+        if let coordinates = geoData?.place?.coordinates {
+            saveData(coordinates)
+        }
+    }
+    
 }

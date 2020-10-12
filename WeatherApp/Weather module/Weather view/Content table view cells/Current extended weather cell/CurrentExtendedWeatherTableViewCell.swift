@@ -79,7 +79,7 @@ class CurrentExtendedWeatherTableViewCell: UITableViewCell {
     }
 }
 
-//MARK: Delegate methods
+//MARK: Fillable
 extension CurrentExtendedWeatherTableViewCell: Fillable {
     func fillSelf(with geoData: GeoData?) {
         if let weather = geoData?.weather {

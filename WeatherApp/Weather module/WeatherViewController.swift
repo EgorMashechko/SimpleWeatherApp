@@ -6,7 +6,7 @@ class WeatherViewController: UIViewController {
 //MARK: Properties
     var geoData: GeoData?
     
-//MARK: Controller lifecycle methods
+//MARK: Lifecycle methods
     override func loadView() {
         let contentView = WeatherContentView()
         self.view = contentView
@@ -27,7 +27,7 @@ class WeatherViewController: UIViewController {
     }
 }
 
-//MARK: Delegate Methods
+//MARK: WeatherContentViewDelegate
 extension WeatherViewController: WeatherContentViewDelegate {
     func weatherContentView(_ view: WeatherContentView, didMenuButtonTap sender: UIButton) {
         let storyboard = UIStoryboard(name: "Finder", bundle: Bundle.main)

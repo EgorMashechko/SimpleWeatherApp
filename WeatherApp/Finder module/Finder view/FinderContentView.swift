@@ -50,7 +50,7 @@ class FinderContentView: UIView {
     
 }
 
-//MARK: Delegate methods
+//MARK: UITableViewDelegate
 extension FinderContentView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
@@ -90,6 +90,7 @@ extension FinderContentView: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
+//MARK: FinderSearchCellDelegate
 extension FinderContentView: FinderSearchCellDelegate {
     func searchCell(_ searchCell: FinderSearchTableViewCell, didLocationButtonTap sender: UIButton) {
         delegate?.didLocationButtonTap()

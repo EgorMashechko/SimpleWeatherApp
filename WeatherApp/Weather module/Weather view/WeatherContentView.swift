@@ -50,7 +50,7 @@ class WeatherContentView: UIView {
     }
 }
 
-//MARK: Delegate methods
+//MARK: UITableViewDelegate
 extension WeatherContentView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 4
@@ -96,6 +96,7 @@ extension WeatherContentView: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
+//MARK: HeaderViewDelegate
 extension WeatherContentView: HeaderViewDelegate {
     func headerView(_ view: HeaderView, didMenuButtonTap sender: UIButton) {
         delegate?.weatherContentView(self, didMenuButtonTap: sender)

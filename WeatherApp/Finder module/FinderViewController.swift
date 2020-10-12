@@ -12,7 +12,7 @@ class FinderViewController: UIViewController {
         return finder
     }()
     
-//MARK: Controller lifecycle methods
+//MARK: Lifecycle methods
     override func loadView() {
         let contentView = FinderContentView()
         self.view = contentView
@@ -36,9 +36,10 @@ class FinderViewController: UIViewController {
             self.present(destinationVC, animated: true, completion: nil)
         }
     }
+    
 }
 
-//MARK: Delegate methods
+//MARK: FinderContentViewDelegate
 extension FinderViewController: FinderContentViewDelegate {
     func didSelectPresentCurrentWeather() {
         if let _geoData = geoData {
@@ -55,6 +56,7 @@ extension FinderViewController: FinderContentViewDelegate {
     }
 }
 
+//MARK: GeoDataFinderDelegate
 extension FinderViewController: GeoDataFinderDelegate {
     func didGeoDataFinded(with geoData: GeoData?) {
         DispatchQueue.main.async {
