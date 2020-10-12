@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		0400BC642513830E003A3DDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400BC632513830E003A3DDF /* AppDelegate.swift */; };
 		0400BC662513830E003A3DDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400BC652513830E003A3DDF /* SceneDelegate.swift */; };
-		0400BC682513830E003A3DDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0400BC672513830E003A3DDF /* ViewController.swift */; };
-		0400BC6B2513830E003A3DDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0400BC692513830E003A3DDF /* Main.storyboard */; };
 		0400BC6D25138310003A3DDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0400BC6C25138310003A3DDF /* Assets.xcassets */; };
 		0400BC7025138310003A3DDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0400BC6E25138310003A3DDF /* LaunchScreen.storyboard */; };
 		0400BC9025138640003A3DDF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0400BC9225138640003A3DDF /* Localizable.strings */; };
@@ -57,12 +55,9 @@
 		0400BC602513830E003A3DDF /* WeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0400BC632513830E003A3DDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0400BC652513830E003A3DDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0400BC672513830E003A3DDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0400BC6A2513830E003A3DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0400BC6C25138310003A3DDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0400BC6F25138310003A3DDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0400BC7125138310003A3DDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0400BC8C251385B8003A3DDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		0400BC8D251385B8003A3DDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0400BC9125138640003A3DDF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		0400BC932513864C003A3DDF /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -150,8 +145,6 @@
 				0400BC792513832F003A3DDF /* Weather module */,
 				0400BC7825138327003A3DDF /* Finder module */,
 				0400BCEB251391E3003A3DDF /* Localizable */,
-				0400BC672513830E003A3DDF /* ViewController.swift */,
-				0400BC692513830E003A3DDF /* Main.storyboard */,
 				0400BC6E25138310003A3DDF /* LaunchScreen.storyboard */,
 				0400BC6C25138310003A3DDF /* Assets.xcassets */,
 				0400BC7125138310003A3DDF /* Info.plist */,
@@ -426,7 +419,6 @@
 				0400BCD625138EC1003A3DDF /* Finder.storyboard in Resources */,
 				0400BCB425138BC1003A3DDF /* HourlyCollectionViewCell.xib in Resources */,
 				0400BCB125138B9E003A3DDF /* HourlyWeatherTableViewCell.xib in Resources */,
-				0400BC6B2513830E003A3DDF /* Main.storyboard in Resources */,
 				0400BCBC25138C19003A3DDF /* DailyCollectionViewCell.xib in Resources */,
 				0400BCD125138E07003A3DDF /* FinderCurrentTableViewCell.xib in Resources */,
 				0400BCAD25138B56003A3DDF /* HeaderView.xib in Resources */,
@@ -491,7 +483,6 @@
 				0400BCD325138E07003A3DDF /* FinderSearchTableViewCell.swift in Sources */,
 				0400BCC125138C4C003A3DDF /* CurrentGeneralWeatherTableViewCell.swift in Sources */,
 				0400BCB025138B9E003A3DDF /* HourlyWeatherTableViewCell.swift in Sources */,
-				0400BC682513830E003A3DDF /* ViewController.swift in Sources */,
 				0400BCE325138F06003A3DDF /* LocalGeoDataManager.swift in Sources */,
 				0400BCB525138BC1003A3DDF /* HourlyCollectionViewCell.swift in Sources */,
 				0400BCAC25138B56003A3DDF /* HeaderView.swift in Sources */,
@@ -515,15 +506,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		0400BC692513830E003A3DDF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0400BC6A2513830E003A3DDF /* Base */,
-				0400BC8C251385B8003A3DDF /* ru */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		0400BC6E25138310003A3DDF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
